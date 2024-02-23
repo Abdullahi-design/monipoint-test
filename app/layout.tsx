@@ -16,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <div className='app relative flex flex-col overflow-hidden min-h-screen'>
+          <div className='flex-grow flex-1'>{children}</div>
+        </div>
+      </body>
     </html>
   );
 }
