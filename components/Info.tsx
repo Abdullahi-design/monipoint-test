@@ -5,6 +5,9 @@ import { AiOutlineLink } from 'react-icons/ai';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import WidgetControl from './ui/WidgetControl';
+import Info_1 from './ui/Info_1';
+import Info_2 from './ui/Info_2';
 
 const Info = () => {
   const containerControls = useAnimation();
@@ -45,25 +48,21 @@ const Info = () => {
       </div>
 
       <motion.div
-        className='flex justify-around px-32'
+        className='flex justify-evenly '
         initial={{ opacity: 0, y: 20 }}
         animate={imageControls}
       >
-        <Image
-          src='/assets/images/info-1.png'
-          alt='logo'
-          width={300}
-          height={300}
-          className='object-contain rounded-xl shadow-xl'
-        />
+        <Info_1/>
 
-        <Image
+        <Info_2/>
+
+        {/* <Image
           src='/assets/images/info-2.png'
           alt='logo'
           width={300}
           height={300}
           className='object-contain rounded-xl shadow-xl shadow-gray-500'
-        />
+        /> */}
       </motion.div>
 
       <div className='mx-auto text-center mt-52'>

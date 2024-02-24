@@ -19,6 +19,9 @@
 .demo_btn {
   @apply rounded-xl w-fit h-fit border bg-gray-200 text-black py-3 px-8 transition-all text-center text-sm flex items-center justify-center;
 }
+.data_visualization_btn {
+  @apply rounded-xl w-fit h-fit border bg-yellow-400 text-black py-2 px-4 transition-all text-center text-xs flex items-center justify-center;
+}
 .ramos_text {
   font-size: 20rem;
   line-height: 1;
