@@ -2,11 +2,21 @@
 
 import Image from 'next/image'
 import CountUp from 'react-countup';
+import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { LiaArrowAltCircleUpSolid } from "react-icons/lia";
 
 const WidgetControl = () => {
+    const [ref, inView] = useInView({ triggerOnce: true });
+    const [shouldAnimate, setShouldAnimate] = useState(false);
+  
+    useEffect(() => {
+      if (inView) {
+        setShouldAnimate(true);
+      }
+    }, [inView]);
   return (
-    <section className='bg-[#0d0d0d] px-24 p-4 font-jost rounded-2xl'>
+    <section className='bg-[#0d0d0d] px-24 p-4 font-jost rounded-2xl' ref={ref}>
         <div className='flex gap-4 mt-12'>
             <Image
             src='/assets/images/widget-control.png'
@@ -22,7 +32,7 @@ const WidgetControl = () => {
                     <span className=''>
                         <LiaArrowAltCircleUpSolid className='absolute mx-12  -mt-2 w-6 h-6 text-white bg-green-500 rounded-full p-1'/>
                     </span>
-                    <CountUp start={0} end={43} duration={2} className="text-white text-xl mt-2 text-center" />K
+                    {shouldAnimate && <CountUp start={0} end={43} duration={2} className="text-white text-xl mt-2 text-center" />}K
                 </div>
             </div>
         </div>

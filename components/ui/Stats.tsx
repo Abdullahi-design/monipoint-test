@@ -1,9 +1,11 @@
 "use client"
 
 import CountUp from 'react-countup';
-import Chart from "./Chart";
+import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { RiStackLine } from "react-icons/ri";
 import { CiNoWaitingSign } from "react-icons/ci";
+import Chart from "./Chart";
 
 const Stats = () => {
 
@@ -12,8 +14,18 @@ const Stats = () => {
   const currentSales = 56; // Replace with your current sales amount
   const progressPercentage = (currentSales / salesTarget) * 100;
 
+  const [ref, inView] = useInView({ triggerOnce: true });
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+
+  useEffect(() => {
+    if (inView) {
+      setShouldAnimate(true);
+    }
+  }, [inView]);
+
+
   return (
-    <section className='flex justify-between gap-4 border border-gray-400 bg-white h-full pb-20 px-8 rounded-xl p-4 font-jost'>
+    <section className='flex justify-between gap-4 border border-gray-400 bg-white h-full pb-20 px-8 rounded-xl p-4 font-jost' ref={ref}>
 
       <div className=''>
         <button className='stats_btn mt-6'>Setting up reports</button>
@@ -30,17 +42,18 @@ const Stats = () => {
             </p>
             <div className="p-2">
               <h1 className="text-gray-500 text-md">Total Profit</h1>
-              <CountUp start={0} end={264.2} duration={2} prefix="$" className="text-black text-xl" />K
-            </div>
+              {shouldAnimate && <CountUp start={0} end={264.2} duration={2} prefix="$" className="text-black text-xl" />}K            </div>
             <div className="bg-gray-200 p-2 px-12 rounded-xl">
               <h1 className="text-gray-500 text-md">Visitors</h1>
               {/* Add progress bar here */}
-              <div className="bg-gray-200 px-2 w-full rounded-xl">
-                <div className="h-2 w-16 rounded-full bg-gray-300">
-                  <div className="h-full w-full rounded-full" style={{ width: `${progressPercentage}%`, backgroundColor: '#4CAF50' }}></div>
-                  <CountUp start={0} end={currentSales} duration={2} separator="," prefix="$" className="text-black text-xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />K
+              {shouldAnimate && (
+                <div className="bg-gray-200 px-2 w-full rounded-xl">
+                  <div className="h-2 w-16 rounded-full bg-gray-300">
+                    <div className="h-full w-full rounded-full" style={{ width: `${progressPercentage}%`, backgroundColor: '#4CAF50' }}></div>
+                    <CountUp start={0} end={currentSales} duration={2} separator="," prefix="$" className="text-black text-xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />K
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </section>
