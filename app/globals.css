@@ -1,7 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');  
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+  @apply relative z-10 flex justify-center items-center flex-col w-full;
+}
+.auth_black_btn {
+  @apply rounded-xl w-fit border bg-white text-black py-3 px-8 transition-all text-center text-sm flex items-center justify-center;
+}
+.stats_btn {
+  @apply rounded-xl w-fit h-fit border bg-[#fe4a23] text-black py-3 px-8 transition-all text-center text-sm flex items-center justify-center;
+}
+.start_btn {
+  @apply rounded-xl w-fit h-fit border bg-[#fe4a23] text-white py-3 px-8 transition-all text-center text-sm flex items-center justify-center;
+}
+.demo_btn {
+  @apply rounded-xl w-fit h-fit border bg-gray-200 text-black py-3 px-8 transition-all text-center text-sm flex items-center justify-center;
+}
+.ramos_text {
+  font-size: 20rem;
+  line-height: 1;
 }
