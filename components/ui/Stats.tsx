@@ -42,7 +42,7 @@ const Stats = () => {
             </p>
             <div className="p-2">
               <h1 className="text-gray-500 text-md">Total Profit</h1>
-              {shouldAnimate && <CountUp start={0} end={264.2} duration={2} prefix="$" className="text-black text-xl" />}K            </div>
+              {shouldAnimate && <CountUp start={0} end={264.2} duration={10} prefix="$" className="text-black text-xl" />}K            </div>
             <div className="bg-gray-200 p-2 px-12 rounded-xl">
               <h1 className="text-gray-500 text-md">Visitors</h1>
               {/* Add progress bar here */}
@@ -50,7 +50,7 @@ const Stats = () => {
                 <div className="bg-gray-200 px-2 w-full rounded-xl">
                   <div className="h-2 w-16 rounded-full bg-gray-300">
                     <div className="h-full w-full rounded-full" style={{ width: `${progressPercentage}%`, backgroundColor: '#4CAF50' }}></div>
-                    <CountUp start={0} end={currentSales} duration={2} separator="," prefix="$" className="text-black text-xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />K
+                    <CountUp start={0} end={currentSales} duration={10} separator="," prefix="$" className="text-black text-xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />K
                   </div>
                 </div>
               )}
@@ -70,7 +70,7 @@ const Stats = () => {
             <CiNoWaitingSign />
           </div>
           <div className='px-3'>
-            +<CountUp start={0} end={58} duration={2} prefix="$" className="text-white text-xl" />%
+            +<CountUp start={0} end={58} duration={10} prefix="$" className="text-white text-xl" />%
           </div>
         </section>
       </div>

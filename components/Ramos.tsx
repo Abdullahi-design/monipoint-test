@@ -66,30 +66,23 @@ const Ramos = () => {
           ))}
         </div>
 
-        <div className="absolute -right-20">
+        <div className="absolute right-0 -mt-20">
           <Image
-            src="/assets/images/mobile-mocup.jpg"
+            src="/assets/images/devices.png"
             alt="logo"
-            width={600}
-            height={600}
+            width={500}
+            height={500}
             className="object-contain rounded-xl"
           />
         </div>
       </div>
 
         <div className="flex justify-center">
-            {/* Word-by-word animation for the word "Ramos" */}
-            {['R', 'a', 'm', 'o', 's'].map((letter, index) => (
-            <motion.div
-                key={index}
-                className="text-[#fe4a23] ramos_text main"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-            >
-                {letter}
-            </motion.div>
-            ))}
+          <div
+            className="text-[#fe4a23] ramos_text main"
+          >
+              Ramo <span className='absolute z-30'>s</span>
+          </div>
         </div>
     </motion.section>
   );

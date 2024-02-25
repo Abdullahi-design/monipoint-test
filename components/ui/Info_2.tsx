@@ -61,7 +61,7 @@ const Info_2 = () => {
             <section className='flex justify-between'>
                 <div className='text-left mt-12'>
                     <h1 className=' text-gray-400'>Total profit</h1>
-                    {shouldAnimate && <CountUp start={0} end={246.2} duration={2} prefix='$' className="text-black text-xl my-3 text-left" />}K
+                    {shouldAnimate && <CountUp start={0} end={246.2} duration={10} prefix='$' className="text-black text-xl my-3 text-left" />}K
                     <button className='data_visualization_btn'>Data Visualization</button>
                 </div>
                 <div className=' rotate-180 flex gap-2'>

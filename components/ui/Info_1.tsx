@@ -33,7 +33,7 @@ const Info_1 = () => {
 
           <div className='absolute mx-40 mt-8 bg-white  px-8 py-5 p-7 rounded-2xl border border-gray-100 shadow-xl'>
             <h1 className='text-sm text-black font-normal text-left mb-3'>Sales revenue</h1>
-            {shouldAnimate && <CountUp start={0} end={131.2} duration={2} prefix='$' className="text-black text-xl my-3 text-left" />}K
+            {shouldAnimate && <CountUp start={0} end={131.2} duration={10} prefix='$' className="text-black text-xl my-3 text-left" />}K
             <div className='flex gap-2 my-4'>
               <div className="h-1 px-4 rounded-full bg-[#4CAF50]"></div>
               <div className="h-1 px-4 rounded-full bg-yellow-400"></div>

@@ -35,25 +35,25 @@ const Nav = () => {
         </Link>
       </motion.div>
 
-      <motion.div
+      <div
         className="flex items-center text-white my-2 bg-gray-200 bg-opacity-20 rounded-2xl"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeInOut', delay: 0.5 }}
+        // initial={{ opacity: 0, y: 20 }}
+        // animate={{ opacity: 1, y: 0 }}
+        // transition={{ duration: 0.8, ease: 'easeInOut', delay: 0.5 }}
       >
-        {items.map((item) => (
+        {items.map((item, index) => (
           <motion.div
             key={item.id}
             variants={itemVariants}
             initial="hidden"
             animate="visible"
-            transition={{ ...itemTransition }}
+            transition={{ ...itemTransition, delay: 0.5 }}
             className="px-4 cursor-pointer"
           >
             {item.name}
           </motion.div>
         ))}
-      </motion.div>
+      </div>
 
       <motion.button
         type="button"

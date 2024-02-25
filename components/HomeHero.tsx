@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { MdOutlineInsights } from "react-icons/md";
+import { BsFillLightningChargeFill } from "react-icons/bs";
 
 const HomeHero = () => {
   const textVariants = {
@@ -22,13 +24,14 @@ const HomeHero = () => {
               animate="visible"
               transition={{ ...textTransition, delay: 0.5 }}
             >
-              <Image
-                src="/assets/images/icons.png"
-                alt="logo"
-                width={120}
-                height={120}
-                className="object-contain"
-              />
+              <div className='flex w-1/2 relative'>
+                <p className="absolute z-10 -left-10 bg-gray-200 p-6 w-fit h-fit rounded-full">
+                  <BsFillLightningChargeFill className="w-7 h-7 text-[#fe4a23]" />
+                </p>
+                <p className="bg-[#fe4a23] left-6 z-20 absolute p-6 w-fit h-fit rounded-full">
+                  <MdOutlineInsights className="w-7 h-7 text-white" />
+              </p>
+              </div>
             </motion.div>
             <motion.h1
               variants={textVariants}
